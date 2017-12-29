@@ -1,0 +1,45 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-about">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      a {
+        color: var(--app-secondary-color);
+      }
+    </style>
+
+    <div class="container">
+      <h1>Why I Made This</h1>
+      <p>My counselor noticed that I seemed to default to certain ways of thinking about myself. She gave me a two-sided handout with useful and, most importantly, actionable information. However, the inconvenience of having to carry around a sheet of paper with you overrides the usefulness.</p>
+      <p>Since I know I won't be carrying it around with me, I bet others won't either. So I made it into a small PWA (Progressive Web App) using <a href="https://www.polymer-project.org/" target="_blank" class="text-theme-gradient">Polymer</a>. It will also be <a href="https://github.com/areddicks1014/unhelpful-thinking-habits" target="_blank" class="text-theme-gradient">open-source</a> so that others can see how it's made and learn from it. <a href="mailto:areddicks1014@gmail.com" class="text-theme-gradient">Feedback</a> is always welcome.</p>
+      <p>I hope this small tool helps someone out there in need of a little self-help. I know I need it from time to time.</p>
+    </div>
+  </template>
+
+  <script>
+    class MyAbout extends Polymer.Element {
+      static get is() { return 'my-about'; }
+    }
+
+    window.customElements.define(MyAbout.is, MyAbout);
+  </script>
+</dom-module>

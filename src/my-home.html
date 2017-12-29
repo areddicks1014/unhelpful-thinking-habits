@@ -1,0 +1,87 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+<link rel="import" href="habit-list-item.html">
+<link rel="import" href="my-icons.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-home">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      div[secondary] {
+        text-overflow: ellipsis;
+      }
+      .list-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .paper-item-link {
+        text-decoration: none;
+      }
+      paper-icon-item {
+        font-size: 1.3em;
+        --paper-icon-item: {
+          color: var(--app-secondary-color);
+        }
+        --paper-item-icon: {
+          color: #000;
+        }
+      }
+      iron-icon {
+        height: 30px;
+        width: 30px;
+      }
+      habit-list-item h5 {
+        color: rgba(0, 0, 0, 0.38);
+      }
+      habit-list-item .alt-thought {
+        color: rgba(0, 0, 0, 0.54);
+        font-style: italic;
+      }
+      habit-list-item:first-of-type {
+        border-radius: 5px 5px 0 0;
+      }
+      habit-list-item:last-of-type {
+        border-radius: 0 0 5px 5px;
+      }
+    </style>
+
+<iron-ajax id="ajax-habits" url="../data/habit-list.json" handle-as="json" last-response="{{ajaxResponseHabit}}" auto></iron-ajax>
+
+    <div class="list-container">
+      <template is="dom-repeat" items="{{ajaxResponseHabit}}" as="habit">
+        <habit-list-item icon="[[habit.icon]]" title="[[habit.title]]">
+          <p>[[habit.info]]</p>
+          <h5>Alternative thought:</h5>
+          <p class="alt-thought">[[habit.alternative]]</p>
+        </habit-list-item>
+      </template>
+    </div>
+
+    
+  </template>
+
+  <script>
+    class MyHome extends Polymer.Element {
+      static get is() { return 'my-home'; }
+    }
+
+    window.customElements.define(MyHome.is, MyHome);
+  </script>
+</dom-module>

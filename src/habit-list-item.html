@@ -1,0 +1,173 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="habit-list-item">
+  <template>
+    <style include="shared-styles">
+      :host {
+        color: rgba(0, 0, 0, 0.87);
+        display: block;
+        background-color: white;
+        margin: 0 8px;
+        border-bottom: solid 1px #ccc;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      :host([first]) {
+        border-radius: 5px 5px 0 0;
+      }
+      :host([last]) {
+        border-radius: 0 0 5px 5px;
+      }
+      iron-icon {
+        width: 50px;
+        height: 50px;
+        padding: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .container {
+        position: relative;
+        transition: height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .top .title {
+        font-size: 20px;
+        margin: 0 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        background: var(--app-secondary-color); /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(left top, var(--app-primary-color), var(--app-secondary-color)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom right, var(--app-primary-color), var(--app-secondary-color)); /* Standard syntax */
+        background-size: cover;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .details {
+        display: none;
+        padding: 16px;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .container .expand {
+        color: #4d4d4d;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      :host([pressed]) {
+        border: none;
+        border-radius: 5px;
+        margin: 8px 0;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+      }
+      :host([pressed]) iron-icon {
+        color: #fff;
+        width: 75px;
+        height: 75px;
+        padding: 16px;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      :host([pressed]) .top {
+        border-radius: 5px 5px 0 0;
+        background: var(--app-primary-color); /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(left top, var(--app-primary-color), var(--app-secondary-color)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom right, var(--app-primary-color), var(--app-secondary-color)); /* Standard syntax */
+        background-size: cover;
+      }
+      :host([pressed]) .top .title {
+        font-size: 30px;
+        color: #fff;
+        background: #fff; /* For browsers that do not support gradients */
+        background-size: cover;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      :host([pressed]) .details {
+        display: block;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      :host([pressed]) .expand {
+        transform: rotate(180deg);
+      }
+      
+      @media only screen and (max-width: 480px) { /* Phone */
+        
+      }
+    </style>
+
+    <div class="container">
+      <div class="top">
+        <!-- <img src="[[icon]]" class="icon"> -->
+        <iron-icon icon="[[icon]]" class="icon"></iron-icon>
+        <p class="title">[[title]]</p>
+        <!-- Move to right side somehow -->
+        
+      </div>
+      <div class="details">
+        <slot>
+      </div>
+      <!-- down chevron to expand -->
+      <paper-icon-button class="expand" icon="mdi:chevron-down"></paper-icon-button>
+    </div>
+  </template>
+
+  <script>
+    class HabitListItem extends Polymer.Element {
+      static get is() { return 'habit-list-item'; }
+      static get properties() {
+        return {
+          icon: String,
+          title: String,
+          info: String,
+          alternative: String,
+          pressed: {
+            type: Boolean,
+            value: false,
+            notify: true,
+            reflectToAttribute: true
+          }
+        }
+      }
+      ready() {
+        super.ready();
+        this.addEventListener('click', () => this.toggle());
+      }
+      toggle() {
+        this.pressed = !this.pressed;
+      }
+    }
+
+    window.customElements.define(HabitListItem.is, HabitListItem);
+  </script>
+</dom-module>

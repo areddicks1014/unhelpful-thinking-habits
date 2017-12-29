@@ -1,0 +1,60 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<!-- shared styles for all views -->
+<dom-module id="shared-styles">
+  <template>
+    <style>
+      .card {
+        margin: 16px;
+        padding: 16px;
+        color: #757575;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      .circle {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        text-align: center;
+        color: #555;
+        border-radius: 50%;
+        background: #ddd;
+        font-size: 30px;
+        line-height: 64px;
+      }
+
+      .bg-theme-gradient {
+        background: var(--app-primary-color); /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(left top, var(--app-primary-color), var(--app-secondary-color)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom right, var(--app-primary-color), var(--app-secondary-color)); /* Standard syntax */
+        background-size: cover;
+      }
+      
+      .text-theme-gradient {
+        background: var(--app-secondary-color); /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(left top, var(--app-primary-color), var(--app-secondary-color)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom right, var(--app-primary-color), var(--app-secondary-color)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom right, var(--app-primary-color), var(--app-secondary-color)); /* Standard syntax */
+        background-size: cover;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </template>
+</dom-module>

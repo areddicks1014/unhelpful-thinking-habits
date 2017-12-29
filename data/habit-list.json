@@ -1,0 +1,86 @@
+[
+    {
+        "name": "mental-filter",
+        "title": "Mental Filter",
+        "icon": "mdi:filter",
+        "info": "When we notice only what the filter allows us to notice, and we dismiss anything that doesn’t ‘fit’.  Like looking through dark blinkers or 'gloomy specs', or only catching the negative stuff in our 'kitchen strainers', whilst anything more positive or realistic is ignored, dismissed or we make excuses for.",
+        "alternative": "Am I only noticing the bad stuff?  Am I filtering out the positives?  Am I wearing those ‘gloomy specs’?  What would be more realistic? What am I catching, what am I dismissing?"
+    },
+    {
+        "name": "judgements",
+        "title": "Judgements",
+        "icon": "mdi:gavel",
+        "info": "Making judgements about events, ourselves, others, or the world, rather than describing what we actually see and have evidence for.",
+        "alternative": "I’m making an evaluation about the situation or person.  It’s how I make sense of the world, but that doesn’t mean my judgements are always right or helpful.  Is there another perspective?"
+    },
+    {
+        "name": "mind-reading",
+        "title": "Mind-Reading",
+        "icon": "mdi:eye",
+        "info": "Assuming we know what others are thinking (usually about us).",
+        "alternative": "Am I assuming I know what others are thinking?  What’s the evidence?  Those are my own thoughts, not theirs.  Is there another, more balanced way of looking at it?"
+    },
+    {
+        "name": "emotional-reasoning",
+        "title": "Emotional Reasoning",
+        "icon": "mdi:emoticon-sad",
+        "info": "I feel bad so it must be bad!  I feel anxious so I must be in danger.",
+        "alternative": "Just because it feels bad, doesn’t necessary mean it is bad.  My feelings are just a reaction to my thoughts – and thoughts are just automatic brain reflexes."
+    },
+    {
+        "name": "prediction",
+        "title": "Prediction",
+        "icon": "mdi:auto-fix",
+        "info": "Believing we know what’s going to happen in the future.",
+        "alternative": "Am I thinking that I can predict the future?  How likely is it that that might really happen?"
+    },
+    {
+        "name": "mountains-molehills",
+        "title": "Mountains and Molehills",
+        "icon": "mdi:terrain",
+        "info": "Exaggerating the risk of danger, or the negatives. Minimising the odds of how things are most likely to turn out, or minimising positives.",
+        "alternative": "Am I exaggerating the risk of danger, and minimising the evidence that it's most likely to be okay?  Or am I exaggerating the negative and minimising the positives? How would someone else see it?  What’s the bigger picture?"
+    },
+    {
+        "name": "compare-despair",
+        "title": "Compare and despair",
+        "icon": "mdi:contrast-circle",
+        "info": "Seeing only the good and positive aspects in others, and comparing ourselves negatively against them.",
+        "alternative": "Am I doing that ‘compare and despair’ thing?  What would be a more balanced and helpful way of looking at it?"
+    },
+    {
+        "name": "catastrophising",
+        "title": "Catastrophising",
+        "icon": "mdi:weather-lightning-rainy",
+        "info": "Imagining and believing that the worst possible thing will happen.",
+        "alternative": "OK, thinking that the worst possible thing will definitely happen isn’t really helpful right now.  What’s most likely to happen?"
+    },
+    {
+        "name": "critical-self",
+        "title": "Critical self",
+        "icon": "mdi:thumb-down",
+        "info": "Putting ourselves down, self-criticism, blaming ourselves for events or situations that are not totally our responsibility.",
+        "alternative": "There I go, that internal bully’s at it again.  Would most people who really know me say that about me?  Is this something that I am totally responsible for?"
+    },
+    {
+        "name": "black-white-thinking",
+        "title": "Black and white thinking",
+        "icon": "mdi:image-filter-black-white",
+        "info": "Believing that something or someone can be only good or bad, right or wrong, rather than anything in-between or ‘shades of grey’.",
+        "alternative": "Things aren’t either totally white or totally black – there are shades of grey.  Where is this on the spectrum?"
+    },
+    {
+        "name": "shoulds-musts",
+        "title": "Shoulds and musts",
+        "icon": "mdi:format-list-checks",
+        "info": "Thinking or saying ‘I should’ (or shouldn’t) and ‘I must’ puts pressure on ourselves, and sets up unrealistic expectations.",
+        "alternative": "Am I putting more pressure on myself, setting up expectations of myself that are almost impossible?  What would be more realistic?"
+    },
+    {
+        "name": "memories",
+        "title": "Memories",
+        "icon": "mdi:movie-roll",
+        "info": "Current situations and events can trigger upsetting memories, leading us to believe that the danger is here and now, rather than in the past, causing us distress right now.",
+        "alternative": "This is just a reminder of the past.  That was then, and this is now.  Even though this memory makes me feel upset, it’s not actually happening again right now."
+    }
+]

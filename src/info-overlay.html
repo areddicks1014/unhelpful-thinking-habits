@@ -1,0 +1,116 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="../bower_components/iron-fit-behavior/iron-fit-behavior.html">
+<link rel="import" href="../bower_components/iron-overlay-behavior/iron-overlay-behavior.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="my-icons.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="info-overlay">
+  <template>
+    <style include="shared-styles">
+      :host {
+        z-index: 500;
+        padding: 24px;
+        color: #424242;
+        width: 100%;
+        height: 100%;
+        background: #eee;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+      }
+      .container {
+        position: relative;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .top .header {
+        font-size: 40px;
+        text-transform: uppercase;
+        margin: 0 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .details {
+        margin: auto;
+        padding: 16px;
+        max-width: 600px;
+        overflow-y: auto;
+        transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        -webkit-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      }
+      .buttons {
+        float: right;
+      }
+      #btn-close {
+        float: right;
+        --paper-icon-button-ink-color: #000;
+        color: #000;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .spacer {
+        height: 128px;
+      }
+      @media only screen and (max-width: 480px) { /* Phone */
+        :host {
+          width: 100%;
+          padding: 8px;
+        }
+        .details {
+          width: 90%;
+        }
+      }
+    </style>
+
+    <div class="container">
+      <div class="spacer"></div>
+      <paper-icon-button id="btn-close" icon="mdi:close" on-tap="_closeOverlay"></paper-icon-button>
+      <div class="top">
+        <h2>UNHELPFUL THINKING HABITS (or Cognitive Distortions)</h2>
+      </div>
+      <div class="details">
+        <p>Over the years, we tend to get into unhelpful thinking habits such as those described below.  We might favour some over others, and there might be some that seem far too familiar.</p>
+        <p>Once you can identify your unhelpful thinking styles, you can start to notice them – they very often occur just before and during distressing situations. Once you can notice them, then that can help you to challenge or distance yourself from those thoughts, and see the situation in a different and more helpful way.</p>
+      </div>
+      <div class="buttons">
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class InfoOverlay extends Polymer.mixinBehaviors([Polymer.IronOverlayBehavior, Polymer.IronFitBehavior, Polymer.IronResizableBehavior], Polymer.Element) {
+      static get is() { return 'info-overlay'; }
+      static get properties() {
+        return {
+          header: String,
+          noCancelOnOutsideClick: {
+            type:Boolean,
+            value: true
+          }
+        }
+      }
+      _closeOverlay() {
+        this.close();
+      }
+    }
+
+    window.customElements.define(InfoOverlay.is, InfoOverlay);
+  </script>
+</dom-module>
